@@ -1,5 +1,12 @@
 tensorflow
+<<<<<<< HEAD
 streamlit
 numpy
 pillow
 kagglehub
+=======
+keras
+numpy
+opencv-python
+streamlit
+>>>>>>> 007492d267a677ed8b892658af2bb407f42c3541

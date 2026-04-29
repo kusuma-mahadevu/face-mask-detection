@@ -5,24 +5,25 @@ import gdown
 import os
 
 # -------------------------------
-# 📥 Download model from Google Drive
+# 🔽 DOWNLOAD MODEL FROM GOOGLE DRIVE
 # -------------------------------
-file_id = "PASTE_YOUR_FILE_ID_HERE"   # 🔴 replace this
+
+file_id = "PASTE_YOUR_REAL_FILE_ID_HERE"   # 🔴 IMPORTANT
 output = "mask_model.h5"
 
 if not os.path.exists(output):
-    url = f"https://drive.google.com/uc?export=download&id={file_id}"
     try:
+        url = f"https://drive.google.com/uc?export=download&id={file_id}"
         gdown.download(url, output, quiet=False)
-    except Exception as e:
-        st.error("❌ Model download failed. Check Google Drive link.")
+    except:
+        st.error("❌ Model download failed")
+        st.info("👉 Check: file is public & file_id is correct")
         st.stop()
 
 # -------------------------------
-# 🤖 Dummy Prediction (since no TensorFlow)
+# 🤖 DUMMY PREDICTION
 # -------------------------------
 def predict(img):
-    # Random prediction (demo purpose)
     return np.random.choice(["Mask", "No Mask"])
 
 # -------------------------------
